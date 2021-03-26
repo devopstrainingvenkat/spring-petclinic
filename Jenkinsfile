@@ -1,11 +1,9 @@
  node ('any') {
-    stage ('scm')
-    {
+    stage ('scm'){
         git 'https://github.com/devopstrainingvenkat/spring-petclinic.git'
     }
 
-    stage ('build')
-    {
+    stage ('build'){
         sh 'mvn package'
     }
 }
