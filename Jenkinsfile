@@ -1,4 +1,4 @@
- node ('any') {
+ node ('MASTER') {
     stage ('scm'){
         git 'https://github.com/devopstrainingvenkat/spring-petclinic.git'
     }
