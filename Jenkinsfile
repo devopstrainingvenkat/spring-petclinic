@@ -1,16 +1,18 @@
- node {
-    stage ('scm'){
-     
-      checkout([$class: 'GitSCM',
-        branches: [[name: '*/main']],
-        extensions: [[$class: 'CloneOption', timeout: 120]],
-        gitTool: 'Default', 
-        userRemoteConfigs: [[url: 'https://github.com/devopstrainingvenkat/spring-petclinic.git']]
-    ])
-     
+pipeline {
+    agent any
+    triggers {
+        upstream(upstreamProjects: 'dummy', threshold: hudson.model.Result.SUCCESS)
     }
-
-    stage ('build'){
-        sh 'mvn package'
+    stages{
+        stage('Source'){
+         steps{
+             git 'https://github.com/devopstrainingvenkat/spring-petclinic.git'
+         }
+        }
+        stage('Package'){
+        steps{
+            sh 'mvn package'
+        }
+        }
     }
 }
