@@ -19,7 +19,7 @@
        script {
        def scannerHome = tool 'sonarqube';
            withSonarQubeEnv("sonarqube") {
-           sh "${tool("sonarqube")}/bin/sonar-scanner \
+           sh "${tool("sonarqube")}/opt/sonar_scanner \
            -Dsonar.projectKey=test \
            -Dsonar.projectName=test \
            -Dsonar.projectVersion=1.0 \
