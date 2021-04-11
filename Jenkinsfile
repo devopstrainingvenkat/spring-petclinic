@@ -22,7 +22,7 @@
            sh "${tool("sonarqube")}/bin/sonar-scanner \
            -Dsonar.projectKey=test \
            -Dsonar.projectName=test \
-           -Dsonar.projectVersion=1.0
+           -Dsonar.projectVersion=1.0 \
            -Dsonar.sources=src/main/java/ \
            -Dsonar.language=java \
            -Dsonar.sourceEncoding=UTF-8 \
