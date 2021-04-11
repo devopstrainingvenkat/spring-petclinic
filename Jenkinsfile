@@ -11,6 +11,6 @@
     }
 
     stage ('build'){
-        sh 'mvn package sonar:sonar'
+        sh 'mvn package'
     }
 }
